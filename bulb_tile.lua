@@ -1,6 +1,6 @@
 require("class")
 
-BulbTile = class(function(c, i, y, sizeWidth, sizeHeight)
+BulbTile = class(function(c, i, y, sizeWidth, sizeHeight, tileColor)
     c.i = i -- row id...
     -- c.j = j
     -- c.x = x -- x coord for (center) of rectangle
@@ -8,27 +8,35 @@ BulbTile = class(function(c, i, y, sizeWidth, sizeHeight)
     c.sizeWidth = sizeWidth
     c.sizeHeight = sizeHeight
     c.tileView = nil
+    c.tileColor = tileColor
 end)
 
 function BulbTile:create(group, type)
     -- display.newRect( [parent,] x, y, width, height )
-    local tileView = display.newRect(0, 0, self.sizeWidth, self.sizeHeight)
-
-   -- if(type) then
-   --     tileView:setFillColor(1/type, 1/type, 1/type)
-   -- else
-   --     tileView:setFillColor(0, 1, 0)
-   -- end
-
-   tileView:setFillColor(0, 1, 0)
+    local tileView = display.newRect(0, 0, self.sizeWidth, self.sizeHeight-1)
+    
+    -- TODO: Move to map class?
+    tileView:setFillColor(self.tileColor.r, self.tileColor.g, self.tileColor.b)
     -- set anchors top-left
     tileView.anchorX = 0
-    tileView:anchorY = 0
+    tileView.anchorY = 0
     tileView.x = 0 -- from self.x
     tileView.y = self.y
+    tileView.id = "tile" .. self.i
 
-    self.tileView = tileView
+    self.tileView = tileView -- TODO: NAMES.... containerView = tile ????
+    
+    -- inserts to group
     group:insert(self.tileView)
+end
+
+function BulbTile:move(data)
+    local y = data
+    self.tileView.y = y-self.sizeHeight/2
+end
+
+function BulbTile:reset()
+    self.tileView.y = self.y 
 end
 
 function BulbTile:removeSelf()

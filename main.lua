@@ -1,5 +1,8 @@
 require("bulb_game_settings")
 
+system.activate("multitouch") 
+math.randomseed(os.time())
+
 -- hide the status bar
 display.setStatusBar( display.HiddenStatusBar )
 
