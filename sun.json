@@ -1,0 +1,133 @@
+{ "frames": [
+   {
+    "filename": "sun 0.ase",
+    "frame": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 1.ase",
+    "frame": { "x": 320, "y": 0, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 2.ase",
+    "frame": { "x": 640, "y": 0, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 3.ase",
+    "frame": { "x": 960, "y": 0, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 4.ase",
+    "frame": { "x": 1280, "y": 0, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 5.ase",
+    "frame": { "x": 1600, "y": 0, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 6.ase",
+    "frame": { "x": 0, "y": 320, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 7.ase",
+    "frame": { "x": 320, "y": 320, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 8.ase",
+    "frame": { "x": 640, "y": 320, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 9.ase",
+    "frame": { "x": 960, "y": 320, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 10.ase",
+    "frame": { "x": 1280, "y": 320, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 11.ase",
+    "frame": { "x": 1600, "y": 320, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   },
+   {
+    "filename": "sun 12.ase",
+    "frame": { "x": 0, "y": 640, "w": 320, "h": 320 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 320, "h": 320 },
+    "sourceSize": { "w": 320, "h": 320 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.5.8",
+  "image": "/Users/samenglander/_dev/SamScroll/sun.png",
+  "format": "RGBA8888",
+  "size": { "w": 2048, "h": 1024 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}

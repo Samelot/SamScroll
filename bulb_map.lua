@@ -24,6 +24,19 @@ end)
 
 function BulbMap:create(group)
     self.tileGroup = display.newGroup()
+
+
+    local sheetInfo = require("bulb_sheet_sun")
+    local myImageSheet = graphics.newImageSheet( "sun.png", sheetInfo:getSheet() )
+    local seq = {
+        { name="a", frames={1,2,3,4,5,6,7,8,10,11,12,13,14}, time =800, loopCount=0} 
+    }
+    local sprite = display.newSprite( myImageSheet, seq )
+    sprite.anchorX = 0
+    sprite.anchorY = 0
+    sprite:toFront()
+    sprite:play()
+
     self.layers[1] = {} -- in my game, this array is 1-dimensional
     local originY = nil
     local coolorsPalette = bulbGameSettings:getCoolorsPalette(7)
@@ -40,7 +53,17 @@ function BulbMap:create(group)
         end
     end
     self.tileGroup:addEventListener("touch", self)
+    group:insert(self.tileGroup)
 end
+
+function BulbMap:update()
+    for i=1, #self.layers[1] do
+        for j=1, #self.layers[1][i] do
+            self.layers[1][i][j]:update()
+        end
+    end
+end
+
 
 function BulbMap:addEventListener(type, object)
     if(not self.events[type]) then
@@ -98,6 +121,7 @@ function BulbMap:touch(event)
 end
 
 function BulbMap:removeSelf()
+    print("remove in map")
     if(self.layers[1]) then
         for i=1, #self.layers[1] do
             self.layers[1][i]:removeSelf()

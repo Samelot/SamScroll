@@ -6,9 +6,9 @@ local scene = composer.newScene()
 local game
 
 function scene:create(event)
-    local sceneGroup = self.view
+    local group = self.view
     --local game = BulbGame(display.actualContentWidth, display.actualContentHeight) -- var derived from BulbGame class, inherits methods :create() and :removeSelf
-    local game = BulbGame(display.contentWidth, display.contentHeight) -- var derived from BulbGame class, inherits methods :create() and :removeSelf
+    local game = BulbGame(display.contentWidth, display.contentHeight, composer) -- var derived from BulbGame class, inherits methods :create() and :removeSelf
        
     game:create(group) -- :create() inherited from bulb_game class
 end

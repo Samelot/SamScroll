@@ -30,6 +30,20 @@ function BulbTile:create(group, type)
     group:insert(self.tileView)
 end
 
+function BulbTile:update()
+    --[[
+    if(self.state == "growing") then
+        if(self.harvestCounter >= 1) then
+            self.harvestCounter = self.harvestCounter - 1
+            self.harvestCountView.text = self.harvestCounter
+        else
+            self.state = "harvestable"
+            self.harvestCountView.text = "HARVEST"
+        end
+    end
+    ]]--
+end
+
 function BulbTile:move(data)
     local y = data
     self.tileView.y = y-self.sizeHeight/2
