@@ -20,6 +20,7 @@ BulbMap = class(function(c, width, height, rows)
     c.touchMapEvent = {
         i = nil
     }
+    c.sunAnim = nil
 end)
 
 function BulbMap:create(group)
@@ -28,14 +29,15 @@ function BulbMap:create(group)
 
     local sheetInfo = require("bulb_sheet_sun")
     local myImageSheet = graphics.newImageSheet( "sun.png", sheetInfo:getSheet() )
-    local seq = {
-        { name="a", frames={1,2,3,4,5,6,7,8,10,11,12,13,14}, time =800, loopCount=0} 
+    local sunSeq = {
+        { name="a", frames={1,2,3,5,6,7,8,10,11,12,13}, time=1500, loopCount=0} 
     }
-    local sprite = display.newSprite( myImageSheet, seq )
-    sprite.anchorX = 0
-    sprite.anchorY = 0
-    sprite:toFront()
-    sprite:play()
+    
+    self.sunAnim = display.newSprite( myImageSheet, sunSeq )
+    self.sunAnim.anchorX = 0
+    self.sunAnim.anchorY = 0
+    --self.sunAnim:toFront()
+    self.sunAnim:play()
 
     self.layers[1] = {} -- in my game, this array is 1-dimensional
     local originY = nil
@@ -57,6 +59,9 @@ function BulbMap:create(group)
 end
 
 function BulbMap:update()
+    if(self.sunAnim.isPlaying == false) then
+        self.sunAnim:play()
+    end
     for i=1, #self.layers[1] do
         for j=1, #self.layers[1][i] do
             self.layers[1][i][j]:update()
@@ -64,6 +69,12 @@ function BulbMap:update()
     end
 end
 
+function BulbMap:pause()
+    print("BulbMap:pause")
+    if(self.sunAnim.isPlaying == true) then
+        self.sunAnim:pause()
+    end
+end
 
 function BulbMap:addEventListener(type, object)
     if(not self.events[type]) then

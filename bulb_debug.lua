@@ -49,9 +49,9 @@ end
 
 function BulbDebug:selectTool(data)
     if(data.type == "game") then
-        print(data.type)
         --BulbDebug:removeSelf()
         self.composer.gotoScene("bulbasaur_game_scene") --RENAME
+        return true
     end
 end
 

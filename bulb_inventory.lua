@@ -64,7 +64,6 @@ function BulbInventory:create(group)
         else 
             j = j+1
             originX = ((j-1) * itemSpacing) 
-            --print(originX)
         end
         
 
@@ -78,9 +77,11 @@ function BulbInventory:create(group)
     end
     self.itemsArr = itemsArr 
     self.toolsArr = toolsArr
+    
     self.inventoryGroup.x = 0 + margin/2
     self.inventoryGroup:toFront()
-  group:insert(self.inventoryGroup)
+    
+    group:insert(self.inventoryGroup)
 end
 
 function BulbInventory:updateInventory(newValue)

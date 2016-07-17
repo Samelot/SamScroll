@@ -14,7 +14,7 @@ BulbGame = class(function(c, width, height, composer)
     c.map = nil
     c.inventory = nil
 
-    c.state = "nothing"
+    c.state = "gamePlay"
     c.selectedPlant = nil
     c.composer = composer
     c.home = {
@@ -42,11 +42,11 @@ function BulbGame:create(group)
         tileName = "home",
         color = BulbColor(100,100,50)
     }
+
     self.inventory = BulbInventory(0, mapHeight, self.width, inventoryHeight, 4, debugScreen)
     --self.inventory:addEventListener("selectPlant", self)
     self.inventory:addEventListener("selectTool", self)
     self.inventory:create(group)
-
     Runtime:addEventListener("enterFrame", self)
 end
 
@@ -55,7 +55,19 @@ function BulbGame:enterFrame()
 end
 
 function BulbGame:update()
-    self.map:update()
+    if(self.state == "gamePlay") then
+        self.map:update()
+    end
+end
+
+function BulbGame:setGameTick(sceneState)
+    print(sceneState)
+    if(sceneState == "show" and self.state == "gamePause") then
+        self.state = "gamePlay"
+    elseif(sceneState == "hide" and self.state == "gamePlay") then
+        self.map:pause()
+        self.state = "gamePause"
+    end
 end
 
 function BulbGame:selectTile(event)
@@ -64,9 +76,8 @@ end
 
 function BulbGame:selectTool(data)
     if(data.type == "home") then
-        print(data.type)
-        --BulbGame:removeSelf()
-        self.composer.gotoScene("bulb_debug_scene", "fade", 500)
+        --self.state = "gamePaused"    
+        self.composer.gotoScene("bulb_debug_scene")
     --else
         --self.state = "tooling"
         --self.selectedTool = data.type

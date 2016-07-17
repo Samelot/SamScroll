@@ -13,6 +13,7 @@ end
 
 function scene:show( event )
     local group = self.view
+    print("debugscene")
 end
 
 function scene:exit( event )
